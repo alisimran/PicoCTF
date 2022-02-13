@@ -1,0 +1,15 @@
+DESCRIPTION
+1. Given a jpg file with hidden info inside
+
+GOAL 
+1. Find the flag
+
+ANALYSIS
+
+1. Look at the metadata
+    exiftool cat.jpg
+    license cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9
+
+2. This may be base64 encoded
+    echo <input> | base64 -d 
+        picoCTF{the_m3tadata_1s_modified}

@@ -1,0 +1,24 @@
+DESCRIPTION
+1. $ nc mercury.picoctf.net 22342, 
+    but it doesn't speak English...
+
+GOAL 
+find the flag
+
+ANALYSIS
+
+1. nc mercury.picoctf.net 22342
+    <output> contains numbers
+    A pattern found : looks like decimal value of ascii characters
+    33-128
+2. Run a python Program to convert decimal value to ascii characters
+    <create python file>
+    no = [<paste no obtained from netcat>]
+    flag_chr = []
+    for num in no:
+        ch = chr(num)
+        flag_chr.append(ch)
+    flag = ''.join(flag_chr)
+    print(f'flag : {flag}')
+3. run program 
+    flag : picoCTF{g00d_k1tty!_n1c3_k1tty!_5fb5e51d}
